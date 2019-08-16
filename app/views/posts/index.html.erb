@@ -1,0 +1,35 @@
+
+<nav class="blue-grey darken-4">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">- MY LIST - miniblog</a>
+      <%# <ul id="nav-mobile" class="right hide-on-med-and-down"> %>
+
+      <% if user_signed_in? %>
+        <span id="hello">HELLO<%=current_user.name%></span>
+        <% else %>
+        <span id="hello">GuestUser</span>
+      <% end %>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+            <div class="user_nav grid-6">
+              <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
+              <li><a class="post" href="/posts/new">NEW</a></li>
+            </div>
+        <% else %>
+            <div class="grid-6">
+              <li><%= link_to "LOG IN", new_user_session_path, class: 'post' %></li>
+              <li><%= link_to "SIGN UP", new_user_registration_path, class: 'post' %></li>
+            </div>
+        <% end %>
+      </ul>
+    </div>
+  <div class="contents row" style="margin-left:auto; margin-right:auto;" >
+
+   <% @posts.each do |post| %>
+   <%= render partial: "post", locals: { post: post } %>
+   <% end %>
+   <%= paginate(@posts)%>
+  </div>
+
+</nav>

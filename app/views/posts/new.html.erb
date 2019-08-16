@@ -1,0 +1,11 @@
+<div class="contents row">
+  <div class="container">
+  <%= form_tag('/posts', method: :post) do %>
+    <h3>
+    <textarea cols="30" name="text" placeholder="Restaurant name" rows="10"></textarea>
+    <textarea class="postinvent" cols="50" name="text" placeholder="Review" rows="50"></textarea>
+    <input type="submit" value="SENT">
+    </h3>
+  <% end %>
+  </div>
+</div>

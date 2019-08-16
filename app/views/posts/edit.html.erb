@@ -1,0 +1,12 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_tag("/posts/#{@post.id}", method: :patch) do %>
+      <h3>
+        Edit
+      </h3>
+      <textarea cols="30" name="name" placeholder="Restaurant name" rows="10"><%= @post.name %></textarea>
+      <textarea class="postinvent" cols="50" name="text" placeholder="Review" rows="50"><%= @post.text %></textarea>
+      <input type="submit" value="SENT">
+    <% end %>
+  </div>
+</div>

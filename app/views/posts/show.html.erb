@@ -1,0 +1,12 @@
+ <div class="contents row">
+      <h3>
+        Details
+      </h3>
+      <p><%= link_to "#{@post.user.name}", "/users/#{@post.user.id}", method: :get %></p>
+      <p><%= @post.name %></p>
+      <p><%= @post.text %></p>
+
+      <a href="/">TOPPAGE ・</a>
+      <a href="/posts/:id/destroy"> DELEAT</a>
+
+</div>
